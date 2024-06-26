@@ -17,7 +17,7 @@ class Profile(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f"this is {self.user}"
+        return f"{self.user}"
 
 class SavingPot(models.Model):
     profile = models.ForeignKey(
@@ -34,5 +34,5 @@ class SavingPot(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"this is {self.name}"
+        return f"Saving pot: {self.name}"
 

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <h1>Profile List</h1>
+    <ul>
+        {% for profile in profiles %}
+            <li>
+                <p>User: {{ profile.user.username }}</p>
+                <p>Age: {{ profile.age }}</p>
+                <p>Email: {{ profile.email }}</p>
+                <p>Main Balance: {{ profile.main_balance }}</p>
+                <p>Created on: {{ profile.created_on }}</p>
+            </li>
+        {% empty %}
+            <li>No profiles available.</li>
+        {% endfor %}
+    </ul>
+</div>
+  
+{% endblock %}
