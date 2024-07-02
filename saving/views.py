@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile
 
 
+
 def home_view(request):
     if request.user.is_authenticated:
         return redirect('profile')

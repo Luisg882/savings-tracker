@@ -120,6 +120,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+# Change the signup default form from alluth for the form I created
+ACCOUNT_SIGNUP_FORM_CLASS = 'saving.forms.CustomSignupForm'
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
