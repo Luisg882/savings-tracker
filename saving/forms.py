@@ -1,10 +1,10 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile, SavingPot
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field
 
-
+# Form to create new user
 class CustomSignupForm(forms.ModelForm):
     class Meta:
         model = Profile
@@ -25,7 +25,8 @@ class CustomSignupForm(forms.ModelForm):
         )
         profile.save()
         return user
-    
+
+# Form to add Money in the user Main Balance    
 class AddMoney(forms.ModelForm):
     class Meta:
         model = Profile
@@ -36,3 +37,9 @@ class AddMoney(forms.ModelForm):
         self.helper = FormHelper(self)
         self.helper.form_show_labels = False
         
+# Form to open new Saving Pot
+class OpenNewPot(forms.ModelForm):
+    class Meta:
+        model = SavingPot
+        fields = ('name',)
+

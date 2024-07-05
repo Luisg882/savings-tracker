@@ -4,9 +4,12 @@
 <div class="container mt-5">
     <h1 class="text-center">Welcome, {{ profile.user.username }}</h1>
     <div class="text-center">
-        <h2>Main Balance: ${{ profile.main_balance }}</h2>
+        <h2>Your Balance: ${{ profile.main_balance }}</h2>
         <a href="{% url 'move-money' %}" class="post-link">
             <h3>Add Money</h3>
+        </a>
+        <a href="{% url 'open-pot' %}" class="post-link">
+            <h3>Open new Pot</h3>
         </a>
     </div>
     <div class="mt-4 text-center">

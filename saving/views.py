@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Profile
-from .forms import AddMoney
+from .forms import AddMoney, OpenNewPot
 
 def home_view(request):
     if request.user.is_authenticated:
@@ -43,5 +43,28 @@ def move_money_view(request):
         {
             'profile': profile,
             'add_money_form': add_money_form,
+        }
+    )
+
+@login_required
+def create_saving_pot_view(request):
+    profile = Profile.objects.get(user=request.user)
+
+    if request.method =="POST":
+        pot_form = OpenNewPot(data=request.POST)
+        if pot_form.is_valid():
+            saving_pot = pot_form.save(commit=False)
+            saving_pot.profile = profile
+            saving_pot.user = request.user
+            saving_pot.save()
+            messages.success(request, 'Saving por created successfully')
+            return redirect('profile')
+    else:
+        pot_form = OpenNewPot()
+
+    return render(
+        request, 'account/open_pot.html',
+        {
+            'pot_form': pot_form
         }
     )
