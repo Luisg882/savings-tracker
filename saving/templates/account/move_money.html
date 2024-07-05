@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %}
+<div class="container">
+  <h2>Move Money</h2>
+  <form method="post">
+    {% csrf_token %} 
+    {{ add_money_form|crispy }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <a href="{% url 'profile' %}" class="btn btn-secondary">Back to profile</a>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card transfer-option">
+          <label for="amount-to-bank-account">Transfer to Bank Account</label>
+          <input
+            type="number"
+            min="1"
+            max="{{ profile.main_balance }}"
+            id="amount-to-bank-account"
+            name="amount-to-bank-account"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card transfer-option">
+          <label for="amount-to-saving-pot">Transfer to Saving Pot</label>
+          <input
+            type="number"
+            min="1"
+            max="{{ profile.main_balance }}"
+            id="amount-to-saving-pot"
+            name="amount-to-saving-pot"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
