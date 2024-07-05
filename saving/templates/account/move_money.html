@@ -3,7 +3,12 @@
   <h2>Move Money</h2>
   <form method="post">
     {% csrf_token %} 
-    {{ add_money_form|crispy }}
+    {{ add_money_form.main_balance|as_crispy_field }}
+    <style>
+        .form-group label[for="id_main_balance"] {
+            display: none !important;
+        }
+    </style>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   <a href="{% url 'profile' %}" class="btn btn-secondary">Back to profile</a>

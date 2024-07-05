@@ -33,9 +33,6 @@ class AddMoney(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(AddMoney, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
+        self.helper = FormHelper(self)
         self.helper.form_show_labels = False
-
-        self.helper.layout = Layout(
-            Field('main_balance', css_class='form-control')  
-        )
+        
