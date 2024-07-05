@@ -1,44 +1,34 @@
-{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %}
-<div class="container">
-  <h2>Move Money</h2>
-  <form method="post">
-    {% csrf_token %} 
-    {{ add_money_form.main_balance|as_crispy_field }}
-    <style>
-        .form-group label[for="id_main_balance"] {
-            display: none !important;
-        }
-    </style>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-  <a href="{% url 'profile' %}" class="btn btn-secondary">Back to profile</a>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card transfer-option">
-          <label for="amount-to-bank-account">Transfer to Bank Account</label>
-          <input
-            type="number"
-            min="1"
-            max="{{ profile.main_balance }}"
-            id="amount-to-bank-account"
-            name="amount-to-bank-account"
-          />
-        </div>
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+  <div class="w-100" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Move Money</h2>
+    <form method="post">
+      {% csrf_token %} 
+      {{ add_money_form.main_balance|as_crispy_field }}
+      <!-- Input to add the money -->
+      <div class="form-group mb-3">
+        <label for="amount-to-add">Amount to Add</label>
+        <input
+          type="number"
+          min="0"
+          id="amount-to-add"
+          name="amount-to-add"
+          class="form-control"
+        />
       </div>
-      <div class="col-md-6">
-        <div class="card transfer-option">
-          <label for="amount-to-saving-pot">Transfer to Saving Pot</label>
-          <input
-            type="number"
-            min="1"
-            max="{{ profile.main_balance }}"
-            id="amount-to-saving-pot"
-            name="amount-to-saving-pot"
-          />
-        </div>
-      </div>
-    </div>
+      <!-- Manually hide the form -->
+      <style>
+           #id_main_balance {
+              display: none !important;
+          }
+      </style>
+      <button type="submit" class="btn btn-primary w-100">Send</button>
+    </form>
+    <a href="{% url 'profile' %}" class="btn btn-secondary mt-3 w-100">Back to profile</a>
   </div>
 </div>
 {% endblock %}
+
+
