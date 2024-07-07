@@ -97,3 +97,25 @@ def saving_pot_details_view(request, pot_id):
             'add_funds_form': add_funds_form
         }
     )
+
+
+@login_required
+@login_required
+def close_pot_confirmation_view(request, pot_id):
+    profile = Profile.objects.get(user=request.user)
+    saving_pot = profile.saving_pots.get(id=pot_id)
+
+    if request.method == 'POST':
+        saving_pot.delete()
+        messages.add_message(request, messages.SUCCESS, 'Saving pot closed.')
+
+        return redirect('profile')
+
+    return render(
+        request, 'account/close_pot.html',
+        {
+            'pot_id': pot_id,
+            'balance': saving_pot.balance
+        }
+        )
+
