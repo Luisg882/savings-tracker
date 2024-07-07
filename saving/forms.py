@@ -43,3 +43,8 @@ class OpenNewPot(forms.ModelForm):
         model = SavingPot
         fields = ('name',)
 
+# Form to move money to saving pot
+class AddMoneySavingPot(forms.ModelForm):
+    class Meta:
+        model = SavingPot
+        fields = ('balance',)

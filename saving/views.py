@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Profile
-from .forms import AddMoney, OpenNewPot
+from .forms import AddMoney, OpenNewPot, AddMoneySavingPot
 
 def home_view(request):
     if request.user.is_authenticated:
@@ -74,9 +74,26 @@ def saving_pot_details_view(request, pot_id):
     profile = Profile.objects.get(user=request.user)
     saving_pot = profile.saving_pots.get(id=pot_id)
 
+    if request.method == "POST":
+        add_funds_form = AddMoneySavingPot(data=request.POST)
+        if add_funds_form.is_valid():
+            amount_to_add = add_funds_form.cleaned_data['balance']
+            if profile.main_balance >= amount_to_add:
+                profile.main_balance -= amount_to_add
+                saving_pot.balance += amount_to_add
+                profile.save()
+                saving_pot.save()
+                messages.add_message(request, messages.SUCCESS, 'Transfer completed')
+            else:
+                messages.add_message(request, messages.ERROR, 'Insufficient funds in main balance')
+            return redirect('profile')
+    else:
+        add_funds_form = AddMoneySavingPot()
+
     return render(
         request, 'account/saving_pot_details.html',
         {
-            'saving_pot': saving_pot
+            'saving_pot': saving_pot,
+            'add_funds_form': add_funds_form
         }
     )
