@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var amountInput = document.getElementById('amount-to-add');
-    var balanceInput = document.getElementById('id_main_balance'); // Adjusted to match your input field ID
+    var balanceInput = document.getElementById('id_main_balance'); 
 
     if (amountInput && balanceInput) {
         amountInput.addEventListener('input', function () {

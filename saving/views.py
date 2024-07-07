@@ -68,3 +68,15 @@ def create_saving_pot_view(request):
             'pot_form': pot_form
         }
     )
+
+@login_required
+def saving_pot_details_view(request, pot_id):
+    profile = Profile.objects.get(user=request.user)
+    saving_pot = profile.saving_pots.get(id=pot_id)
+
+    return render(
+        request, 'account/saving_pot_details.html',
+        {
+            'saving_pot': saving_pot
+        }
+    )
