@@ -6,7 +6,7 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container log-content">
+<div class="container content-extention">
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <h1>{% trans "Log In" %}</h1>
@@ -24,7 +24,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="primaryAction btn log-button text-white" type="submit">{% trans "Log In" %}</button>
+        <button class="primaryAction btn button text-white" type="submit">{% trans "Log In" %}</button>
       </form>
     </div>
   </div>

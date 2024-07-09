@@ -5,25 +5,22 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<div class="container log-content">
+<div class="container container-fluid d-flex flex-column align-items-center content-extention">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign Out" %}</h3>
-
-            <p>{% trans 'Are you sure you want to sign out?' %}</p>
-        </div>
+        <h3 class="text-center">{% trans "Sign Out" %}</h3>
+        <p class="text-center">{% trans 'Are you sure you want to sign out?' %}</p>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-
-            <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="primaryAction btn log-button text-white" type="submit">{% trans 'Sign Out' %}</button>
-            </form>
-        </div>
+        <form method="post" action="{% url 'account_logout' %}">
+         {% csrf_token %}
+         {% if redirect_field_value %}
+         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+         {% endif %}
+         <button class="primaryAction btn button text-white" type="submit" id="sign-out">{% trans 'Sign Out' %}</button>
+        </form>
+    </div>
+    <div class="row">
+        <a href="{% url 'profile' %}" class="btn btn-secondary mt-2">Back to profile</a>
     </div>
 </div>
 {% endblock %}

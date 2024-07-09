@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container">
+<div class="container container-fluid d-flex flex-column align-items-center content-extention-3">
     <h1>Close Saving Pot</h1>
     <p id="transfer-message"></p>
     
@@ -9,8 +9,8 @@
     <form id="close-pot-form" method="POST" action="{% url 'close-pot' pot_id %}">
         {% csrf_token %}
         <input type="hidden" id="pot-balance" value="{{ balance }}">
-        <button type="button" id="close-pot-btn" class="btn btn-danger">Yes, Close Pot</button>
-        <a href="{% url 'saving-pot-details' pot_id %}" class="btn btn-secondary">Cancel</a>
+        <button type="button" id="close-pot-btn" class="btn btn-danger ">Yes, Close Pot</button>
+        <a href="{% url 'saving-pot-details' pot_id %}" class="btn btn-secondary ">Cancel</a>
     </form>
 </div>
 {% endblock %}

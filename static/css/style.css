@@ -12,14 +12,22 @@
     color: #1E90FF;
 }
 
-.log-button{
+.button{
     background-color: #1E90FF;
     margin-bottom: 1em;
 }
 
-.log-content{
+.content-extention{
     margin-top: 45%;
     margin-bottom: 45%;
+}
+
+.money-button{
+    background-color: #008000;
+}
+
+.open-pot-button{
+    background-color: #F4BB44;
 }
 
 /* Footer styling */
@@ -32,12 +40,21 @@
     border-bottom: solid;
 }
 
-
-/* Index.html styling */
+/* Index styling */
 .register-buttons{
     background-color: #1E90FF;
     margin-top: 1em;
     color: white;
+}
+
+.content-extention-4 {
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+/* Profile Styling */
+#profile-container {
+    margin-top: 5em;
 }
 
 /* Login and Sign up forms styling */
@@ -64,5 +81,143 @@
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 1rem;
+}
+
+/* Saving pot details styling */
+.content-extention-2 {
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.content-extention-3 {
+    margin-top: 52%;
+    margin-bottom: 52%;
+}
+
+/* Media query for screens higer tan 800 */
+
+@media screen and (min-height: 800px) {
+    .content-extention{
+        margin-top: 68%;
+        margin-bottom: 68%;
+    }
+
+    .content-extention-2 {
+        margin-top: 45%;
+        margin-bottom: 45%;
+    }
+    
+    .content-extention-3 {
+        margin-top: 75%;
+        margin-bottom: 75%;
+    }
+
+    .content-extention-4 {
+        margin-top: 33%;
+        margin-bottom: 33%;
+    }
+}
+
+/* Media query for tablets 768 */
+
+@media screen and (min-width: 768px) {
+    .content-extention{
+        margin-top: 26%;
+        margin-bottom: 26%;
+    }
+
+    .content-extention-2 {
+        margin-top: 25%;
+        margin-bottom: 25%;
+    }
+    
+    .content-extention-3 {
+        margin-top: 45%;
+        margin-bottom: 45%;
+    }
+
+    .content-extention-4 {
+        margin-top: 38%;
+        margin-bottom: 38%;
+    }
+
+    #signup_form{
+        height: 600px;
+        overflow-y: auto;
+    }
+
+    /* Footer */
+    .footer-css {
+        position:absolute;
+        width:100%;
+        bottom:0px;
+    }
+}
+
+/* Mediaquery for devices whider than 1000px */
+
+@media screen and (min-width: 1000px) {
+    #profile-container {
+        margin-top: 30%;
+    }
+
+    .content-extention{
+        margin-top: 37%;
+        margin-bottom: 37%;
+    }
+
+    .content-extention-2 {
+        margin-top: 35%;
+        margin-bottom: 35%;
+    }
+    
+    .content-extention-3 {
+        margin-top: 50%;
+        margin-bottom: 50%;
+    }
+
+    .content-extention-4 {
+        margin-top: 38%;
+        margin-bottom: 38%;
+    }
+
+    #sig-up-container {
+        margin-top: 7%;
+    }
+
+    #signup_form{
+        height: 900px;
+    }
+}
+
+/* Mediaquery for devices higer than 1370px */
+@media screen and (min-width: 1370px){
+    #profile-container {
+        margin-top: 13%;
+    }
+
+    .content-extention{
+        margin-top: 13%;
+        margin-bottom: 13%;
+    }
+
+    .content-extention-2 {
+        margin-top: 14%;
+        margin-bottom: 14%;
+    }
+    
+    .content-extention-3 {
+        margin-top: 22%;
+        margin-bottom: 22%;
+    }
+
+    .content-extention-4 {
+        margin-top: 18%;
+        margin-bottom: 18%;
+    }
+
+    #sig-up-container {
+        margin-top: 5%;
+    }
 }
 

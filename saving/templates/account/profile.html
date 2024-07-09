@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container" id="profile-container">
     <h1 class="text-center">Welcome, {{ profile.user.username }}</h1>
     <div class="text-center">
         <h2>Your Balance: ${{ profile.main_balance }}</h2>
-        <a href="{% url 'move-money' %}" class="post-link">
+        <a href="{% url 'move-money' %}" class="btn money-button text-white">
             <h3>Add Money</h3>
         </a>
-        <a href="{% url 'open-pot' %}" class="post-link">
+        <a href="{% url 'open-pot' %}" class="btn open-pot-button text-white">
             <h3>Open new Pot</h3>
         </a>
     </div>
@@ -21,7 +21,7 @@
                         <h4 class="card-title">{{ saving_pots.name }}</h4>
                         <p class="card-text">Balance: ${{ saving_pots.balance }}</p>
                         <p class="card-text">Created on: {{ saving_pots.created_on }}</p>
-                        <a href="{% url 'saving-pot-details' pot_id=saving_pots.id %}" class="btn btn-primary">View Details</a>
+                        <a href="{% url 'saving-pot-details' pot_id=saving_pots.id %}" class="btn button text-white">View Details</a>
                     </div>
                 </div>
             {% empty %}

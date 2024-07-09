@@ -3,31 +3,33 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="text-center">Saving Pot: {{ saving_pot.name }}</h1>
-    <div class="text-center">
-        <h2>Balance: ${{ saving_pot.balance }}</h2>
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center content-extention-2">
+    <div class="container">
+        <h1 class="text-center">Saving Pot: {{ saving_pot.name }}</h1>
+        <div class="text-center">
+            <h2>Balance: ${{ saving_pot.balance }}</h2>
+        </div>
     </div>
-</div>
-<div class="text-center mt-4">
-    <a href="{% url 'profile' %}" class="btn btn-primary">Back to Profile</a>
-</div>
-<div class="mt-4 text-center">
-    <h2>Add Money from Main Balance</h2>
-    <form method="post">
-        {% csrf_token %} 
-        {{ add_funds_form|crispy }}
-        <!-- Hide the Name label manually -->
-        <style>
-            .form-group label[for="id_balance"],
-            .form-label[for="id_balance"] {
-                display: none !important;
-            }
-        </style>
-        <button type="submit" class="btn btn-success ">Add Money</button>
-    </form>
-</div>
-<div class="text-center mt-4">
-    <a href="{% url 'close-pot' saving_pot.id %}" class="btn btn-danger">Close Pot</a>
+    <div class="text-center mt-4">
+        <a href="{% url 'profile' %}" class="btn btn-secondary">Back to Profile</a>
+    </div>
+    <div class="mt-4 text-center">
+        <h3>Add Money from Main Balance</h2>
+        <form method="post">
+            {% csrf_token %} 
+            {{ add_funds_form|crispy }}
+            <!-- Hide the Name label manually -->
+            <style>
+                .form-group label[for="id_balance"],
+                .form-label[for="id_balance"] {
+                    display: none !important;
+                }
+            </style>
+            <button type="submit" class="btn btn-success ">Add Money</button>
+        </form>
+    </div>
+    <div class="text-center mt-3">
+        <a href="{% url 'close-pot' saving_pot.id %}" class="btn btn-danger content-bottom">Close Pot</a>
+    </div>
 </div>
 {% endblock %}
