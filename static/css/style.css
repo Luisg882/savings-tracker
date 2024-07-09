@@ -1,0 +1,68 @@
+/* import font  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* General styling */
+.yoursavings-title{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.savings-spam{
+    color: #1E90FF;
+}
+
+.log-button{
+    background-color: #1E90FF;
+    margin-bottom: 1em;
+}
+
+.log-content{
+    margin-top: 45%;
+    margin-bottom: 45%;
+}
+
+/* Footer styling */
+.footer-css{
+    background-color: #1E90FF;
+}
+
+/* Navbar styling */
+.nav-css{
+    border-bottom: solid;
+}
+
+
+/* Index.html styling */
+.register-buttons{
+    background-color: #1E90FF;
+    margin-top: 1em;
+    color: white;
+}
+
+/* Login and Sign up forms styling */
+#signup_form,
+.login {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#id_username,
+#id_email,
+#id_nominated_bank_account,
+#id_main_balance,
+#id_login,
+#id_password,
+#id_password1,
+#id_password2 { 
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+

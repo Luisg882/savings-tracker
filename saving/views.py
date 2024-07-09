@@ -118,4 +118,3 @@ def close_pot_confirmation_view(request, pot_id):
             'balance': saving_pot.balance
         }
         )
-

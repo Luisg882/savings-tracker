@@ -2,25 +2,24 @@
 
 <div class="mb-5 mt-5">
     <h1 class="text-center">
-        <span>YOUR</span><span class="text-primary">SAVINGS</span>
+        <span class="yoursavings-title">Your</span><span class="yoursavings-title savings-spam">Savings</span>
     </h1>
     <div class="container-fluid text-center">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <p class="text-center">
+            <span class="yoursavings-title">Your</span><span class="yoursavings-title savings-spam">Savings</span> is a user-friendly platform designed to help you manage and track of your savings effortlessly. 
+            Here, you can link your profile with your bank account, transfer funds to your main balance, and create different
+            pots for everything you want to save. Once you reach your savings target, you can seamlessly transfer the money 
+            back to your bank account. Whether you're saving for a vacation, a new gadget, or an emergency fund, <span class="yoursavings-title">Your</span><span class="yoursavings-title savings-spam">Savings</span>
+            makes the process simple and organized.
         </p>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <a class="btn btn-primary text-white nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page" href="{% url 'account_signup' %}">Sign Up</a>
+                <a class="btn register-buttons text-white nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page" href="{% url 'account_signup' %}">Sign Up</a>
             </div>
             <div class="col-md-6">
-                <a class="btn btn-primary text-white nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                <a class="btn register-buttons text-white nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
             </div>
         </div>
     </div>

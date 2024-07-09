@@ -1,15 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Profile(models.Model):   
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="profile"
     )
     slug = models.SlugField(max_length=200, unique=True)
-    age = models.IntegerField()
     email = models.EmailField(max_length=200, unique=True)
-    nominated_bank_account = models.CharField(max_length=100)
+    nominated_bank_account = models.DecimalField(max_digits=8, decimal_places=0)
     main_balance = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     created_on = models.DateTimeField(auto_now_add=True)
 
@@ -35,4 +35,3 @@ class SavingPot(models.Model):
 
     def __str__(self):
         return f"Saving pot: {self.name}"
-

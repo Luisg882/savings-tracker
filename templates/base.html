@@ -13,7 +13,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Savings</title>
+    <title>YourSavings</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,9 +37,12 @@
   </head>
   <body class="d-flex flex-column h-100 main-bg">
     <!-- NavBar -->
-    <div class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="navbar navbar-expand-lg navbar-light nav-css">
       <div class="container-fluid">
-        <a href="{{ home_url }}" class="navbar-brand"><span class="brand">YOUR</span><span class="text-primary">SAVINGS</span></a>
+        <div id="yoursavings-logo">
+          <img src="/static/images/yoursavings-logo.png" alt="image of yoursavings">
+          <a href="{{ home_url }}" class="navbar-brand"><span class="brand yoursavings-title">Your</span><span class="yoursavins-title savings-spam">Savings</span></a>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
           aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -69,13 +72,13 @@
       </div>
     </div>
 
-    <main class="flex-shrink-0 container-fluid">
+    <main class="flex-shrink-0 container-fluid align-items-center">
       {% block content %}
       {% endblock content %}
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-info">
+    <footer class="footer mt-auto py-3 footer-css">
       <p class="m-0 text-center text-white">Created By Luis Goncalves</p>
       <p class="m-0 text-center text-white">Follow us: 
         <i class="fab fa-facebook-square ms-3"></i>
