@@ -2,6 +2,8 @@
 
 YourSavings is a Django based website were the user can open an account and link it to his personal bank account so they can send money from it to the main balance, open new saving pots, transfer the funds from the main balance to the saving pots and then close them sending the funds to their personal bank account once they achieve their saving goal.
 
+For propuses of the project the fundtionality for adding and takien funds from nominated account is not included. The project is builded to manage the internal funds data in the web site. This movements are mentioned during the project just hypothetically.
+
 ## Features
 
 - **Navigation**
@@ -63,7 +65,23 @@ YourSavings is a Django based website were the user can open an account and link
   - Will show the amount the user have it the pot
   - Have the option to add funds from the main balance to the pod
   - Close the pot option will direct the user to the close pot pageMain balance before adding funds to a pot
-  ![main balance befro tadding funds to saving pot](/static/images/main-balance-before-add-money-to-saving-pot.png)
+
+  Main balance before transfer funds to pot
+  ![main balance before tadding funds to saving pot](/static/images/main-balance-before-add-money-to-saving-pot.png)
 
   Adding fund to the pot
   ![saving pot adding the funds](/static/images/adding-funds-to-saving-pot.png)
+
+  main balance after adding funds to saving pot
+  ![main balance after adding fund to pot](/static/images/balance-after-adding-funds.png)
+
+  Pot balance after adding funds
+  ![saving pot balance after adding funds](/static/images/saving-pot-after-adding-funds.png)
+
+- **Closing pot**
+  - Allow the user to close the account and send the funds to their bank account
+  - In case the account have funds will say that the funds will go to the bank account
+  - In case there isn't no funds in the account it will say your pot is empty and will be closed
+  
+  ![closing pot with funds in page](/static/images/closing-saving-pot.png)
+  ![closing pot without funds](/static/images/closing-saving-pot-no-funds.png)
