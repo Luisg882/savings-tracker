@@ -8,6 +8,10 @@
     font-style: normal;
 }
 
+.social {
+    color: #f9f9f9;
+}
+
 .savings-spam{
     color: #1E90FF;
 }
@@ -186,7 +190,7 @@
     }
 
     #signup_form{
-        height: 900px;
+        height: 700px;
     }
 }
 
