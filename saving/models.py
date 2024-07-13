@@ -7,7 +7,6 @@ class Profile(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="profile"
     )
-    slug = models.SlugField(max_length=200, unique=True)
     email = models.EmailField(max_length=200, unique=True)
     nominated_bank_account = models.DecimalField(max_digits=8, decimal_places=0)
     main_balance = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)

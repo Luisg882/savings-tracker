@@ -89,3 +89,12 @@ For project purposes the fundtionality for adding and takien funds from nominate
   
   ![closing pot with funds in page](/static/images/closing-saving-pot.png)
   ![closing pot without funds](/static/images/closing-saving-pot-no-funds.png)
+
+## Bugs
+**Solved Bugs**
+ - To check the saving details I didn't add a slug field in the SavingPot model so I couldn't make a search for the slug pattern to get the specific saving pot. To solve this it was added pot_id as a second argument of the
+ saving_pot_details_view, in this way we can added as a .get method so it will track and retrieve each saving in the variable saving_pot = profile.saving_pots.get(id=pot_id)
+
+ ![saving pot details code](/static/images/saving-pot-details-bug.png)
+
+ - 
