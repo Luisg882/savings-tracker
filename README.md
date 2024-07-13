@@ -107,3 +107,9 @@ For project purposes the fundtionality for adding and takien funds from nominate
  Profile model after changes
 
  ![Profile code after changes](/static/images/profile-model-after-changes.png)
+
+ - Wen making changes to any of the models the messages didn't display in the screen, because of this the user was redirected to the profile page after any changes. Adding a for loop in the html pages and the reverse method it was posible to add a link to return in the profile page and display the success message. This process was repeated in the different views.
+
+ View without the reverse
+![view without reverse in](/static/images/view-without-reverse.png)
+

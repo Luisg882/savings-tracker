@@ -48,3 +48,8 @@ class AddMoneySavingPot(forms.ModelForm):
     class Meta:
         model = SavingPot
         fields = ('balance',)
+
+class ChangeNameSavingPot(forms.ModelForm):
+    class Meta:
+        model = SavingPot
+        fields = ('name',)

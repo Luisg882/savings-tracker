@@ -1,9 +1,10 @@
+from django.urls import reverse
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Profile
-from .forms import AddMoney, OpenNewPot, AddMoneySavingPot
+from .forms import AddMoney, OpenNewPot, AddMoneySavingPot, ChangeNameSavingPot
 
 def home_view(request):
     if request.user.is_authenticated:
@@ -25,7 +26,6 @@ def profile_view(request):
          'page_obj': page_obj}
     )
 
-@login_required
 def move_money_view(request):
     profile = Profile.objects.get(user=request.user)
 
@@ -33,7 +33,14 @@ def move_money_view(request):
         add_money_form = AddMoney(data=request.POST, instance=profile)
         if add_money_form.is_valid():
             add_money_form.save()
-            return redirect('profile')  
+            # Generate the URL for the profile page
+            profile_url = reverse('profile')
+            messages.success(
+                request,
+                f'Transfer completed. <a href="{profile_url}" class="alert-link">Go to Profile</a>',
+                extra_tags='safe'  
+            )
+
     else:
         add_money_form = AddMoney(instance=profile)
 
@@ -56,7 +63,13 @@ def create_saving_pot_view(request):
             saving_pot.profile = profile
             saving_pot.user = request.user
             saving_pot.save()
-            return redirect('profile')
+            # Generate the URL for the profile page
+            profile_url = reverse('profile')
+            messages.success(
+                request,
+                f'New Pot created. <a href="{profile_url}" class="alert-link">Go to Profile</a>',
+                extra_tags='safe'  
+            )
     else:
         pot_form = OpenNewPot()
 
@@ -81,8 +94,12 @@ def saving_pot_details_view(request, pot_id):
                 saving_pot.balance += amount_to_add
                 profile.save()
                 saving_pot.save()
-             
-            return redirect('profile')
+                messages.success(
+                request,
+                f'Transfer completed',
+                extra_tags='safe'  
+            )
+            
     else:
         add_funds_form = AddMoneySavingPot()
 
@@ -95,7 +112,6 @@ def saving_pot_details_view(request, pot_id):
     )
 
 
-@login_required
 @login_required
 def close_pot_confirmation_view(request, pot_id):
     profile = Profile.objects.get(user=request.user)
@@ -112,3 +128,31 @@ def close_pot_confirmation_view(request, pot_id):
             'balance': saving_pot.balance
         }
         )
+
+
+@login_required
+def change_name_pot_details_view(request, pot_id):
+    profile = Profile.objects.get(user=request.user)
+    saving_pot = profile.saving_pots.get(id=pot_id)
+
+    if request.method == "POST":
+        change_name_form = ChangeNameSavingPot(data=request.POST, instance=saving_pot)
+        if change_name_form.is_valid():
+            change_name_form.save()
+            # Generate the URL for the profile page
+            profile_url = reverse('profile')
+            messages.success(
+                request,
+                f'Name Changed. <a href="{profile_url}" class="alert-link">Go to Profile</a>',
+                extra_tags='safe'  
+            )
+    else:
+        change_name_form = ChangeNameSavingPot(instance=saving_pot)
+
+    return render(
+        request, 'account/change_pot_name.html',
+        {
+            'saving_pot': saving_pot,
+            'change_name_form': change_name_form
+        }
+    )

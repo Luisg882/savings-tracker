@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* General styling */
-.yoursavings-title{
+.yoursavings-title {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -12,40 +12,45 @@
     color: #f9f9f9;
 }
 
-.savings-spam{
+.savings-spam {
     color: #1E90FF;
 }
 
-.button{
+.button {
     background-color: #1E90FF;
     margin-bottom: 1em;
 }
 
-.content-extention{
+.content-extention {
     margin-top: 45%;
     margin-bottom: 45%;
 }
 
-.money-button{
+.money-button {
     background-color: #008000;
 }
 
-.open-pot-button{
+.open-pot-button {
     background-color: #F4BB44;
 }
 
+#font-weight-bold {
+    font-weight: 400;
+    color: #008000;
+}
+
 /* Footer styling */
-.footer-css{
+.footer-css {
     background-color: #1E90FF;
 }
 
 /* Navbar styling */
-.nav-css{
+.nav-css {
     border-bottom: solid;
 }
 
 /* Index styling */
-.register-buttons{
+.register-buttons {
     background-color: #1E90FF;
     margin-top: 1em;
     color: white;
@@ -120,11 +125,22 @@
         margin-top: 33%;
         margin-bottom: 33%;
     }
+
+    /* Footer */
+    .footer-css {
+        position:absolute;
+        width:100%;
+        bottom:0px;
+    }
 }
 
 /* Media query for tablets 768 */
 
 @media screen and (min-width: 768px) {
+    #profile-container {
+        margin-top: 25%;
+    }
+
     .content-extention{
         margin-top: 26%;
         margin-bottom: 26%;
@@ -146,24 +162,15 @@
     }
 
     #signup_form{
-        height: 600px;
+        height: 500px;
         overflow-y: auto;
     }
 
-    /* Footer */
-    .footer-css {
-        position:absolute;
-        width:100%;
-        bottom:0px;
-    }
 }
 
 /* Mediaquery for devices whider than 1000px */
 
 @media screen and (min-width: 1000px) {
-    #profile-container {
-        margin-top: 30%;
-    }
 
     .content-extention{
         margin-top: 37%;
@@ -186,11 +193,7 @@
     }
 
     #sig-up-container {
-        margin-top: 7%;
-    }
-
-    #signup_form{
-        height: 700px;
+        margin-top: 5%;
     }
 }
 
