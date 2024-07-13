@@ -52,19 +52,21 @@ For project purposes the fundtionality for adding and takien funds from nominate
 - **Move Money**
   - The user adds funds from their bank account to the main balance
   - Back to profile button to go back to the profile 
+  - Successfull message will tell the user if it was successful and link to go back to profile page.
 
   ![Move money page](/static/images/move-money.png)
 
 - **Open new pot**
   - Will allow the user to create a new pot
   - User can name the pot
+  - Successfull message will tell the user if it was successful and link to go back to profile page.
 
   ![open new pot page](/static/images/open-new-pot.png) 
 
 - **Saving pot details**
   - Will show the amount the user have it the pot
   - Have the option to add funds from the main balance to the pod
-  - Close the pot option will direct the user to the close pot pageMain balance before adding funds to a pot
+  - Close the pot option will direct the user to the close pot Main balance before adding funds to a pot
 
   Main balance before transfering funds to pot
 
@@ -81,6 +83,12 @@ For project purposes the fundtionality for adding and takien funds from nominate
   Pot balance after adding funds
 
   ![saving pot balance after adding funds](/static/images/saving-pot-after-adding-funds.png)
+
+- **Change pot name**
+  - User can change the name of current pot.
+  - Successfull message will tell the user if it was successful and link to go back to profile page.
+
+  ![imae of the change pot name with successful message](/static/images/change-pot-name.png)
 
 - **Closing pot**
   - Allow the user to close the account and send the funds to their bank account
@@ -110,6 +118,13 @@ For project purposes the fundtionality for adding and takien funds from nominate
 
  - Wen making changes to any of the models the messages didn't display in the screen, because of this the user was redirected to the profile page after any changes. Adding a for loop in the html pages and the reverse method it was posible to add a link to return in the profile page and display the success message. This process was repeated in the different views.
 
- View without the reverse
-![view without reverse in](/static/images/view-without-reverse.png)
+ View without reverse link
+
+ ![image of view without reverse link](/static/images/view-without-reverse.png)
+
+ View with reverse link
+
+ ![image if view with reverse](/static/images/view-with-reverse.png)
+
+
 
