@@ -9,8 +9,9 @@
     <form id="close-pot-form" method="POST" action="{% url 'close-pot' pot_id %}">
         {% csrf_token %}
         <input type="hidden" id="pot-balance" value="{{ balance }}">
-        <button type="button" id="close-pot-btn" class="btn btn-danger ">Yes, Close Pot</button>
-        <a href="{% url 'saving-pot-details' pot_id %}" class="btn btn-secondary ">Cancel</a>
+        <button type="button" id="close-pot-btn" class="btn btn-danger">Yes, Close Pot</button>
+        <a href="{% url 'saving-pot-details' pot_id %}" class="btn btn-secondary">Cancel</a>
     </form>
+    <div class="text-center mt-3" id="closing-pot-warning"></div>
 </div>
 {% endblock %}

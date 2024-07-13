@@ -33,7 +33,6 @@ def move_money_view(request):
         add_money_form = AddMoney(data=request.POST, instance=profile)
         if add_money_form.is_valid():
             add_money_form.save()
-            messages.add_message(request, messages.SUCCESS, 'Transfer completed')
             return redirect('profile')  
     else:
         add_money_form = AddMoney(instance=profile)
@@ -57,7 +56,6 @@ def create_saving_pot_view(request):
             saving_pot.profile = profile
             saving_pot.user = request.user
             saving_pot.save()
-            messages.success(request, 'Saving por created successfully')
             return redirect('profile')
     else:
         pot_form = OpenNewPot()
@@ -83,9 +81,7 @@ def saving_pot_details_view(request, pot_id):
                 saving_pot.balance += amount_to_add
                 profile.save()
                 saving_pot.save()
-                messages.add_message(request, messages.SUCCESS, 'Transfer completed')
-            else:
-                messages.add_message(request, messages.ERROR, 'Insufficient funds in main balance')
+             
             return redirect('profile')
     else:
         add_funds_form = AddMoneySavingPot()
@@ -107,8 +103,6 @@ def close_pot_confirmation_view(request, pot_id):
 
     if request.method == 'POST':
         saving_pot.delete()
-        messages.add_message(request, messages.SUCCESS, 'Saving pot closed.')
-
         return redirect('profile')
 
     return render(

@@ -97,4 +97,13 @@ For project purposes the fundtionality for adding and takien funds from nominate
 
  ![saving pot details code](/static/images/saving-pot-details-bug.png)
 
- - 
+ - The nominated bank account field of the sign up form was allowing to add any kind of caracters and simbols. Change the nominated_bank_account field from CharField to DecimalField allowing only 8 numbers and no decimals in the Profile model. 
+ Also remove slug and age fields since they didn't got any use
+
+ Profile model before changes 
+
+ ![Profile code before changes](/static/images/profile-model-before-changes.png)
+
+ Profile model after changes
+
+ ![Profile code after changes](/static/images/profile-model-after-changes.png)
