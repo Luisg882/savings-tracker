@@ -4,6 +4,14 @@ YourSavings is a Django-based website where users can open an account and link i
 
 For project purposes, the functionality for adding and taking funds from nominated accounts is not included. The project is designed to manage the internal funds data on the website. These movements are mentioned hypothetically throughout the project.
 
+![resposive image phone](/static/images/responsive-phone.png)
+
+![resposive image table](/static/images/responsive-tablet.png)
+
+![resposive image laptop](/static/images/responsive-laptopn.png)
+
+![resposive image desktop](/static/images/responsive-desktop.png)
+
 ## Features
 
 - **Navigation**
