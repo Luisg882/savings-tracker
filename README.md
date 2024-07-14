@@ -1,112 +1,198 @@
 # YourSavings
 
-YourSavings is a Django based website where the user can open an account and link it to his personal bank account so they can send money from it to the main balance, open new saving pots, transfer the funds from the main balance to the saving pots and then close them sending the funds to their personal bank account once they achieve their saving goal.
+YourSavings is a Django-based website where users can open an account and link it to their personal bank accounts. They can transfer money from their bank accounts to the main balance, open new savings pots, transfer funds from the main balance to the savings pots, and close them, sending the funds back to their personal bank accounts once they achieve their savings goals.
 
-For project purposes the fundtionality for adding and takien funds from nominated account is not included. The project is builded to manage the internal funds data in the web site. This movements are mentioned during the project just hypothetically.
+For project purposes, the functionality for adding and taking funds from nominated accounts is not included. The project is designed to manage the internal funds data on the website. These movements are mentioned hypothetically throughout the project.
 
 ## Features
 
 - **Navigation**
-  - On top of every page, it shows logo and title of the website follow by the navigation options.
-  - The Home option will take the user to the main index.html. if they are already log in will take them back to heir profile page.
-  - Register will take them to the Sign Up page were they can register themselves. If the customer is already log in it will desapeard
-  - For phones the navigation options will be wrapped in a menu button> When clicked will display all the navigation options.
+  - On top of every page, it shows the logo and title of the website followed by the navigation options.
+  - The Home option will take the user to the main index.html. If they are already logged in, it will take them back to their profile page.
+  - Register will take them to the Sign-Up page where they can register themselves. If the customer is already logged in, it will disappear.
+  - For phones, the navigation options will be wrapped in a menu button. When clicked, it will display all the navigation options.
 
   ![navigation bar](/static/images/navbar.png)
 
 - **Home**
-  - Introduction: text description of the website and what the users are going to spect from the website
-  - Sign up button to go directly to the sign up allowing the user to open the account
-  - Login button for the already registered user login
+  - Introduction: text description of the website and what the users can expect from the website.
+  - Sign up button to go directly to the sign-up page allowing the user to open an account.
+  - Login button for already registered users to log in.
 
-  ![introduction section showing bout sign up and login](/static/images/home.png)
+  ![introduction section showing about sign up and login](/static/images/home.png)
 
 - **Register**
-  - Shows the Sign up form to populate the profile model (username, email, nominated bank account, main balance, username)
-  - Password validation asks for at least 8 characters
-  - Email validation checking that uses the right email structure
-  - Nominated bank account only allows 8 numbers 
+  - Shows the Sign-Up form to populate the profile model (username, email, nominated bank account, main balance).
+  - Password validation asks for at least 8 characters.
+  - Email validation checks for the correct email structure.
+  - Nominated bank account only allows 8 numbers.
 
   ![Sign up form](/static/images/sign-up.png)
   ![last part of the sign up form](/static/images/sing-up-end.png)
   
 - **Log in**
-  - Allows the user to log into their profiles
-  - Remember me option to prepopulate the user password and username
+  - Allows the user to log into their profiles.
+  - Remember me option to prepopulate the user password and username.
 
   ![log in section](/static/images/login.png)
 
 - **Sign Out**
-  - Allow the user log out of his profile
+  - Allows the user to log out of their profile.
 
   ![sign out](/static/images/sign-out.png)
 
 - **Profile**
-  - Will show the current balance that the user has 
-  - Add money will redirect the user to the Move Money site
-  - Open a new pot will allow the user to create new pots
-  - Your Saving pots will display the pots the user has. If there is more than 3 it will paginate the pots by 3.
+  - Shows the current balance that the user has.
+  - Add money redirects the user to the Move Money page.
+  - Open a new pot allows the user to create new pots.
+  - Your Saving pots display the pots the user has. If there are more than 3, it will paginate the pots by 3.
 
   ![profile page](/static/images/profile.png)
 
 - **Move Money**
-  - The user adds funds from their bank account to the main balance
-  - Back to profile button to go back to the profile 
-  - Successfull message will tell the user if it was successful and link to go back to profile page.
+  - The user adds funds from their bank account to the main balance.
+  - Back to profile button to go back to the profile.
+  - Successful message will tell the user if it was successful and link to go back to the profile page.
 
   ![Move money page](/static/images/move-money.png)
 
 - **Open new pot**
-  - Will allow the user to create a new pot
-  - User can name the pot
-  - Successfull message will tell the user if it was successful and link to go back to profile page.
+  - Allows the user to create a new pot.
+  - User can name the pot.
+  - Successful message will tell the user if it was successful and link to go back to the profile page.
 
   ![open new pot page](/static/images/open-new-pot.png) 
 
 - **Saving pot details**
-  - Will show the amount the user have it the pot
-  - Have the option to add funds from the main balance to the pod
-  - Close the pot option will direct the user to the close pot Main balance before adding funds to a pot
+  - Shows the amount the user has in the pot.
+  - Has the option to add funds from the main balance to the pot.
+  - Close the pot option will direct the user to close the pot. Main balance before adding funds to a pot.
 
-  Main balance before transfering funds to pot
+  Main balance before transferring funds to pot.
 
-  ![main balance before tadding funds to saving pot](/static/images/main-balance-before-add-money-to-saving-pot.png)
+  ![main balance before adding funds to saving pot](/static/images/main-balance-before-add-money-to-saving-pot.png)
 
-  Adding fund to the pot
+  Adding funds to the pot.
 
   ![saving pot adding the funds](/static/images/adding-funds-to-saving-pot.png)
 
-  Main balance after adding funds to saving pot
+  Main balance after adding funds to saving pot.
 
-  ![main balance after adding fund to pot](/static/images/balance-after-adding-funds.png)
+  ![main balance after adding funds to pot](/static/images/balance-after-adding-funds.png)
 
-  Pot balance after adding funds
+  Pot balance after adding funds.
 
   ![saving pot balance after adding funds](/static/images/saving-pot-after-adding-funds.png)
 
 - **Change pot name**
-  - User can change the name of current pot.
-  - Successfull message will tell the user if it was successful and link to go back to profile page.
+  - User can change the name of the current pot.
+  - Successful message will tell the user if it was successful and link to go back to the profile page.
 
-  ![imae of the change pot name with successful message](/static/images/change-pot-name.png)
+  ![image of the change pot name with successful message](/static/images/change-pot-name.png)
 
 - **Closing pot**
-  - Allow the user to close the account and send the funds to their bank account
-  - In case the account have funds will say that the funds will go to the bank account
-  - In case there isn't no funds in the account it will say your pot is empty and will be closed
+  - Allows the user to close the account and send the funds to their bank account.
+  - If the account has funds, it will say that the funds will go to the bank account.
+  - If there are no funds in the account, it will say your pot is empty and will be closed.
   
   ![closing pot with funds in page](/static/images/closing-saving-pot.png)
   ![closing pot without funds](/static/images/closing-saving-pot-no-funds.png)
 
+## Features left to implement
+  - Add functionality to request and send funds from bank accounts.
+  - Add a function to automatically distribute the funds added to the main balance to the savings pots in different percentages.
+
+## Technologies Used
+  **Languages Used**
+  - HTML5
+  - CSS3
+  - JavaScript
+  - Python
+
+  **Libraries and Programs Used**
+   - **Django** - Used to link and control the front-end and back-end interface.
+   - **Crispy Forms** - Used to display the forms in the HTML pages.
+   - **Allauth** - Used to control the authentication of the users.
+   - **Bootstrap 5** - Used to style the HTML pages.
+   - **Gunicorn** - To support the usage of the site on Heroku.
+   - **Psycopg2** - To allow the Django project to interact with the database.
+   - **Grammarly** - Used to correct misspellings and grammar mistakes.
+   - **Font Awesome** - To get social media icons.
+   - **Google Fonts** - Oswald and Raleway fonts were used on the website.
+   - **Invision** - To make early sketches of the website.
+   - **Git** - Used as IDE to control and track the project's progression.
+   - **Python Tutor** - Used to check the errors, and understand and correct the functions.
+
+## Testing
+  - Tested in Google Chrome, Firefox, and Edge browsers.
+  - Website is responsive in all browsers.
+  - All Social Media icons open in a new tab.
+  - Navbar links take the user to the right location.
+  - Login successfully accesses the user profile.
+  - Sign out takes you back to the home page.
+  - Sign up form checks and validates the right information given.
+
+**Functional Testing**
+  - **Profile**
+    - Add money button takes you to the move-money.html.
+    - Open new Pot takes you to the open pot page.
+    - View Details in each saving pot takes you to the saving pot itself.
+
+  - **Add money**
+    - Only allows integer numbers.
+    - The Send button shows the Transfer completed message and the Go to Profile link takes you back to the profile page.
+    - Back to profile button takes you back to the profile page.
+
+    ![image of the main balance before adding funds](/static/images/balance-before-adding-funds-from-bank-account.png)
+
+    ![image adding funds to the main balance](/static/images/adding-funds-to-main-balance.png)
+
+    ![image of the main balance after adding funds](/static/images/main-balance-after-adding-funds.png)
+
+  - **Open new Pot**
+    - Create button shows New Pot created message and the go to profile link takes you to the profile page showing the new pot.
+    - Back to profile button takes you back to the profile page.
+  
+    ![image of the creation of Car pot](/static/images/create-new-pot.png)
+
+    ![image of the profile with the new pot](/static/images/profile-with-new-pot.png)
+
+  - **Saving details**
+    - Add money shows the Transfer completed and updates the balance of the account.
+    - Change pot name takes you to the change pot name page.
+    - Close pot will take the user to the close pot page.
+    - Back to profile button takes you back to the profile page.
+
+    ![image of the main balance before adding the funds in the saving pot](/static/images/profile-with-new-pot.png)
+
+    ![image of saving pot after adding the funds](/static/images/adding-funds-to-saving-pot-test.png)
+
+    ![image of main balance after adding funds in the saving pot](/static/images/main-balance-after-adding-funds-to-saving-pot.png)
+
+  - **Change pot name**
+    - Name changed message appears after changing the name and the Go to Profile link takes you back to the profile page. The Cancel button will take the user back to the saving pot details.
+
+    ![image of pot before changing the name of the pot](/static/images/adding-funds-to-saving-pot.png)
+
+    ![image of the new name of the pot](/static/images/test-change-pot-name.png)
+
+    ![image of profile with pot with new name](/static/images/profile-with-changed-pot-name.png)
+
+  - **Close saving pot**
+    - Close pot will take the user to the close pot page.
+    - After clicking "Yes, Close Pot" button, it will show the message "Are you sure you want to close this pot? The funds will be transferred to your bank account." if the user has funds in it. If the user has no funds, this message will show "The saving pot is empty and will be closed." Two buttons "Yes, Close Pot" and "Cancel" will appear. If "Cancel" is clicked, it will take the user back to the saving pot details. If "Yes, Close Pot" is clicked, a new section will appear with the message "Are you sure you want to close this pot? The saving pot is empty and will be closed." in case that the user has no funds, or "Are you sure you want to close this pot? The funds will be transferred to your bank account." if the user has funds. Two new buttons, "Yes, Close Pot" and "Cancel", will appear. If "Yes, Close Pot" is clicked, the user will be redirected to the profile page. If "Cancel" is clicked, it will hide this new section. 
+
+    ![closing pot with funds in page](/static/images/closing-saving-pot.png)
+
+    ![closing pot after clicking first "Yes, Close Pot"](/static/images/closing-saving-pot-after-clicking-first-option.png)
+
 ## Bugs
 **Solved Bugs**
- - To check the saving details I didn't add a slug field in the SavingPot model so I couldn't make a search for the slug pattern to get the specific saving pot. To solve this it was added pot_id as a second argument of the
- saving_pot_details_view, in this way we can added as a .get method so it will track and retrieve each saving in the variable saving_pot = profile.saving_pots.get(id=pot_id)
+ - To check the saving details, I didn't add a slug field in the SavingPot model, so I couldn't search for the slug pattern to get the specific saving pot. To solve this, I added pot_id as a second argument of the saving_pot_details_view, allowing it to be added as a .get method to track and retrieve each saving in the variable saving_pot = profile.saving_pots.get(id=pot_id).
 
  ![saving pot details code](/static/images/saving-pot-details-bug.png)
 
- - The nominated bank account field of the sign up form was allowing to add any kind of caracters and simbols. Change the nominated_bank_account field from CharField to DecimalField allowing only 8 numbers and no decimals in the Profile model. 
- Also remove slug and age fields since they didn't got any use
+ - The nominated bank account field of the sign-up form was allowing any kind of characters and symbols. I changed the nominated_bank_account field from CharField to DecimalField, allowing only 8 numbers and no decimals in the Profile model. I also removed slug and age fields since they were not used.
 
  Profile model before changes 
 
@@ -116,7 +202,7 @@ For project purposes the fundtionality for adding and takien funds from nominate
 
  ![Profile code after changes](/static/images/profile-model-after-changes.png)
 
- - Wen making changes to any of the models the messages didn't display in the screen, because of this the user was redirected to the profile page after any changes. Adding a for loop in the html pages and the reverse method it was posible to add a link to return in the profile page and display the success message. This process was repeated in the different views.
+ - When making changes to any of the models, the messages didn't display on the screen, and the user was redirected to the profile page after any changes. By adding a for loop in the HTML pages and the reverse method, it was possible to add a link to return to the profile page and display the success message. This process was repeated in the different views.
 
  View without reverse link
 
@@ -124,7 +210,15 @@ For project purposes the fundtionality for adding and takien funds from nominate
 
  View with reverse link
 
- ![image if view with reverse](/static/images/view-with-reverse.png)
+ ![image of view with reverse](/static/images/view-with-reverse.png)
 
+**Unsolved Bugs**
+  - Wanted to change the name of the Profile model to Account since it was more logical for the project, but errors retrieving the information from the database occurred because previous users had already created profiles. Attempted to erase the profiles and users to eliminate any trace of the profile model, but the error persisted, so it was decided to keep the Profile name.
 
+  - Wanted to delete the age and slug fields from the Profile model since they weren't being used. Attempted to make the previous solution by erasing previous profiles that contained slug and age as part of the field, but the error persisted.
 
+## Deployment
+- The deployment was done on GitHub pages as follows:
+    - Open the settings section on the repository.
+    - Click the option of pages on the left sidebar.
+    - Select the master branch in the source section.

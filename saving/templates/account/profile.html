@@ -1,10 +1,13 @@
 {% extends "base.html" %}
+{% load humanize %}
 
 {% block content %}
+
+
 <div class="container" id="profile-container">
     <h1 class="text-center">Welcome, {{ profile.user.username }}</h1>
     <div class="text-center">
-        <h2>Your Balance: ${{ profile.main_balance }}</h2>
+        <h2>Your Balance: ${{ profile.main_balance|intcomma }}</h2>
         <a href="{% url 'move-money' %}" class="btn money-button text-white">
             <h3>Add Money</h3>
         </a>
@@ -19,7 +22,7 @@
                 <div class="card m-2" style="width: 18rem;">
                     <div class="card-body">
                         <h4 class="card-title">{{ saving_pots.name }}</h4>
-                        <p class="card-text">Balance: ${{ saving_pots.balance }}</p>
+                        <p class="card-text">Balance: ${{ saving_pots.balance|intcomma }}</p>
                         <p class="card-text">Created on: {{ saving_pots.created_on }}</p>
                         <a href="{% url 'saving-pot-details' pot_id=saving_pots.id %}" class="btn button text-white">View Details</a>
                     </div>
