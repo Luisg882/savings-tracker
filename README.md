@@ -186,6 +186,7 @@ For project purposes, the functionality for adding and taking funds from nominat
 
     ![closing pot after clicking first "Yes, Close Pot"](/static/images/closing-saving-pot-after-clicking-first-option.png)
 
+
 ## Bugs
 **Solved Bugs**
  - To check the saving details, I didn't add a slug field in the SavingPot model, so I couldn't search for the slug pattern to get the specific saving pot. To solve this, I added pot_id as a second argument of the saving_pot_details_view, allowing it to be added as a .get method to track and retrieve each saving in the variable saving_pot = profile.saving_pots.get(id=pot_id).
@@ -216,6 +217,55 @@ For project purposes, the functionality for adding and taking funds from nominat
   - Wanted to change the name of the Profile model to Account since it was more logical for the project, but errors retrieving the information from the database occurred because previous users had already created profiles. Attempted to erase the profiles and users to eliminate any trace of the profile model, but the error persisted, so it was decided to keep the Profile name.
 
   - Wanted to delete the age and slug fields from the Profile model since they weren't being used. Attempted to make the previous solution by erasing previous profiles that contained slug and age as part of the field, but the error persisted.
+
+**Validator testing**
+  - CSS
+    - No errors were found in W3C (Jigsaw) validator
+  - Python
+    - No errors were found in pep8 linter
+  - Java Script
+    - ESLint was used and no errors were found.
+  - Accessibility
+    - Lighthouse test in index.html.
+
+    ![image of the lighthouse result of the index.html](/static/images/lighthouse-index.png)
+
+    - Lighthouse test in login.
+
+    ![image of the lighthouse result of the login](/static/images/lighthouse-login.png)
+
+    - Lighthouse test in sign up.
+
+    ![image of the lighthouse result of the sign up](/static/images/lighthouse-signup.png)
+
+    - Lighthouse test in log out.
+
+    ![image of the lighthouse result of the log out](/static/images/lighthouse-logout.png)
+
+    - Lighthouse test in Profile.
+
+    ![image of the lighthouse result of the Profile](/static/images/lighthouse-profile.png)
+
+    - Lighthouse test in Move Money.
+
+    ![image of the lighthouse result of the Move Money](/static/images/lighthouse-move-money.png)
+
+    - Lighthouse test in Open new pot.
+
+    ![image of the lighthouse result of the Open new pot](/static/images/lighthouse-open-new-pot.png)
+
+    - Lighthouse test in Close saving pot.
+
+    ![image of the lighthouse result of the Close saving pot](/static/images/lighthouse-closing-pot.png)
+
+    - Lighthouse test in Change saving pot name.
+
+    ![image of the lighthouse result of the Change saving pot name](/static/images/lighthouse-change-name-pot.png)
+
+    - Lighthouse test in Saving pot details.
+
+    ![image of the lighthouse result of the Saving pot details](/static/images/lighthouse-saving-pot-details.png)
+
 
 ## Deployment
 - The deployment was done on GitHub pages as follows:

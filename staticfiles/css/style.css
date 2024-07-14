@@ -1,11 +1,215 @@
-.form-group label[for="id_main_balance"] {
-    display: none;
+/* import font  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* General styling */
+.yoursavings-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
-h1 {
-    color: rgb(38, 0, 255);
+.social {
+    color: #f9f9f9;
 }
 
-p {
-    color: blue;
+.savings-spam {
+    color: #1E90FF;
 }
+
+.button {
+    background-color: #1E90FF;
+    margin-bottom: 1em;
+}
+
+.content-extention {
+    margin-top: 45%;
+    margin-bottom: 45%;
+}
+
+.money-button {
+    background-color: #008000;
+}
+
+.open-pot-button {
+    background-color: #F4BB44;
+}
+
+#font-weight-bold {
+    font-weight: 400;
+    color: #008000;
+}
+
+/* Footer styling */
+.footer-css {
+    background-color: #1E90FF;
+}
+
+/* Navbar styling */
+.nav-css {
+    border-bottom: solid;
+}
+
+/* Index styling */
+.register-buttons {
+    background-color: #1E90FF;
+    margin-top: 1em;
+    color: white;
+}
+
+.content-extention-4 {
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+/* Profile Styling */
+#profile-container {
+    margin-top: 5em;
+}
+
+/* Login and Sign up forms styling */
+#signup_form,
+.login {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#id_username,
+#id_email,
+#id_nominated_bank_account,
+#id_main_balance,
+#id_login,
+#id_password,
+#id_password1,
+#id_password2 { 
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Saving pot details styling */
+.content-extention-2 {
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.content-extention-3 {
+    margin-top: 52%;
+    margin-bottom: 52%;
+}
+
+/* Media query for screens higer tan 800 */
+
+@media screen and (min-height: 800px) {
+    .content-extention{
+        margin-top: 68%;
+    }
+
+    .content-extention-2 {
+        margin-top: 45%;
+    }
+    
+    .content-extention-3 {
+        margin-top: 75%;
+    }
+
+    .content-extention-4 {
+        margin-top: 33%;
+    }
+
+    /* Footer */
+    .footer-css {
+        position:absolute;
+        width:100%;
+        bottom:0px;
+    }
+}
+
+/* Media query for tablets 768 */
+
+@media screen and (min-width: 768px) {
+    #profile-container {
+        margin-top: 25%;
+    }
+
+    .content-extention{
+        margin-top: 26%;
+    }
+
+    .content-extention-2 {
+        margin-top: 25%;
+    }
+    
+    .content-extention-3 {
+        margin-top: 45%;
+    }
+
+    .content-extention-4 {
+        margin-top: 38%;
+    }
+
+    #signup_form{
+        height: 500px;
+        overflow-y: auto;
+    }
+
+}
+
+/* Mediaquery for devices whider than 1000px */
+
+@media screen and (min-width: 1000px) {
+
+    .content-extention{
+        margin-top: 37%;
+    }
+
+    .content-extention-2 {
+        margin-top: 3%;
+    }
+    
+    .content-extention-3 {
+        margin-top: 50%;
+    }
+
+    .content-extention-4 {
+        margin-top: 38%;
+    }
+
+    #sig-up-container {
+        margin-top: 5%;
+    }
+}
+
+/* Mediaquery for devices higer than 1370px */
+@media screen and (min-width: 1370px){
+    #profile-container {
+        margin-top: 13%;
+    }
+
+    .content-extention{
+        margin-top: 13%;
+    }
+
+    .content-extention-2 {
+        margin-top: 8%;
+    }
+    
+    .content-extention-3 {
+        margin-top: 15%;
+    }
+
+    .content-extention-4 {
+        margin-top: 18%;
+        
+    }
+
+    #sig-up-container {
+        margin-top: 5%;
+    }
+}
+
