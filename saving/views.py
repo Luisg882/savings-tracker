@@ -5,7 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Profile
-from .forms import AddMoney, OpenNewPot, AddMoneySavingPot, ChangeNameSavingPot
+from .forms import (
+    AddMoney,
+    OpenNewPot,
+    AddMoneySavingPot,
+    ChangeNameSavingPot
+)
 
 
 def home_view(request):
@@ -46,8 +51,7 @@ def move_money_view(request):
     """
     Move money view.
 
-    Allows the user to add funds
-    to the main balance.
+    Allows the user to add funds to the main balance.
     """
     profile = Profile.objects.get(user=request.user)
 
@@ -58,7 +62,8 @@ def move_money_view(request):
             profile_url = reverse('profile')
             messages.success(
                 request,
-                f'Transfer completed. <a href="{profile_url}" class="alert-link">Go to Profile</a>',
+                f'Transfer completed. <a href="{profile_url}" '
+                'class="alert-link">Go to Profile</a>',
                 extra_tags='safe'
             )
     else:
@@ -90,13 +95,17 @@ def create_saving_pot_view(request):
             profile_url = reverse('profile')
             messages.success(
                 request,
-                f'New Pot created. <a href="{profile_url}" class="alert-link">Go to Profile</a>',
+                f'New Pot created. <a href="{profile_url}" '
+                'class="alert-link">Go to Profile</a>',
                 extra_tags='safe'
             )
     else:
         pot_form = OpenNewPot()
 
-    return render(request, 'account/open_pot.html', {'pot_form': pot_form})
+    return render(
+        request, 'account/open_pot.html',
+        {'pot_form': pot_form}
+    )
 
 
 @login_required
@@ -104,9 +113,9 @@ def saving_pot_details_view(request, pot_id):
     """
     Saving pot details view.
 
-    Displays the current balance of the pot
-    allowing funds to be added from the main balance.
-    Provides links to close the saving pot and change its name.
+    Displays the current balance of the pot allowing funds
+    to be added from the main balance. Provides links to close
+    the saving pot and change its name.
     """
     profile = Profile.objects.get(user=request.user)
     saving_pot = profile.saving_pots.get(id=pot_id)
@@ -120,8 +129,11 @@ def saving_pot_details_view(request, pot_id):
                 saving_pot.balance += amount_to_add
                 profile.save()
                 saving_pot.save()
-                messages.success(
-                    request, 'Transfer completed', extra_tags='safe'
+                messages.success(request, 'Successful', extra_tags='safe')
+            else:
+                messages.error(
+                    request,
+                    'Transfer failed: Insufficient balance in main account.'
                 )
     else:
         add_funds_form = AddMoneySavingPot()
@@ -163,13 +175,16 @@ def change_name_pot_details_view(request, pot_id):
     saving_pot = profile.saving_pots.get(id=pot_id)
 
     if request.method == "POST":
-        change_name_form = ChangeNameSavingPot(data=request.POST, instance=saving_pot)
+        change_name_form = ChangeNameSavingPot(
+            data=request.POST, instance=saving_pot
+        )
         if change_name_form.is_valid():
             change_name_form.save()
             profile_url = reverse('profile')
             messages.success(
                 request,
-                f'Name Changed. <a href="{profile_url}" class="alert-link">Go to Profile</a>',
+                f'Name Changed. <a href="{profile_url}" '
+                'class="alert-link">Go to Profile</a>',
                 extra_tags='safe'
             )
     else:

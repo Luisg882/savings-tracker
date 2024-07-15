@@ -170,6 +170,7 @@ For project purposes, the functionality for adding and taking funds from nominat
 
   - **Saving details**
     - Add money shows the Transfer completed and updates the balance of the account.
+    - If the user add more funds that they have in the main balance a failed message will appear
     - Change pot name takes you to the change pot name page.
     - Close pot will take the user to the close pot page.
     - Back to profile button takes you back to the profile page.
@@ -188,6 +189,8 @@ For project purposes, the functionality for adding and taking funds from nominat
     ![image of the new name of the pot](/static/images/test-change-pot-name.png)
 
     ![image of profile with pot with new name](/static/images/profile-with-changed-pot-name.png)
+
+    ![image of transfer failed message](/static/images/failed-transfer-message.png)
 
   - **Close saving pot**
     - Close pot will take the user to the close pot page.
