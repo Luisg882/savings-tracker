@@ -19,6 +19,8 @@ For project purposes, the functionality for adding and taking funds from nominat
   - The Home option will take the user to the main index.html. If they are already logged in, it will take them back to their profile page.
   - Register will take them to the Sign-Up page where they can register themselves. If the customer is already logged in, it will disappear.
   - For phones, the navigation options will be wrapped in a menu button. When clicked, it will display all the navigation options.
+  - Log in will take the user to the login site.
+  - If they are login it will change to sign out.
 
   ![navigation bar](/static/images/navbar.png)
 
@@ -34,6 +36,7 @@ For project purposes, the functionality for adding and taking funds from nominat
   - Password validation asks for at least 8 characters.
   - Email validation checks for the correct email structure.
   - Nominated bank account only allows 8 numbers.
+  - The main balance will allow up to 10 digits.
 
   ![Sign up form](/static/images/sign-up.png)
   ![last part of the sign up form](/static/images/sing-up-end.png)
@@ -108,7 +111,7 @@ For project purposes, the functionality for adding and taking funds from nominat
 
 ## Features left to implement
   - Add functionality to request and send funds from bank accounts.
-  - Add a function to automatically distribute the funds added to the main balance to the savings pots in different percentages.
+  - Add a function to automatically distribute the funds added from the main balance to the savings pots in different percentages.
 
 ## Technologies Used
   **Languages Used**
@@ -225,6 +228,11 @@ For project purposes, the functionality for adding and taking funds from nominat
   - Wanted to change the name of the Profile model to Account since it was more logical for the project, but errors retrieving the information from the database occurred because previous users had already created profiles. Attempted to erase the profiles and users to eliminate any trace of the profile model, but the error persisted, so it was decided to keep the Profile name.
 
   - Wanted to delete the age and slug fields from the Profile model since they weren't being used. Attempted to make the previous solution by erasing previous profiles that contained slug and age as part of the field, but the error persisted.
+
+  - Wen the user login for the first time and goes to any of the sections that display a successful message will display a successfully signed in or signed out or bout. 
+
+  ![image of the successful message bug](/static/images/successful-message-bug.png)
+
 
 **Validator testing**
   - CSS
