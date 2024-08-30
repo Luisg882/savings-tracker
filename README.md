@@ -287,7 +287,11 @@ For project purposes, the functionality for adding and taking funds from nominat
 
 
 ## Deployment
-- The deployment was done on GitHub pages as follows:
-    - Open the settings section on the repository.
-    - Click the option of pages on the left sidebar.
-    - Select the master branch in the source section.
+  This project was deployed with a Code Institute mock terminal for Heroku.
+   - Fork savings-traker from Git Hub. 
+   - Create a new Heroku app.
+   - Add config Vars DISABLE_COLLECTSTATIC with a value of 1 to prevent Heroku from uploading static files, add DATABASE_URL with the value of the database destination 
+   - Set the buildpacks to Phyton and NodeJS.
+   - Link the app to the Git Hub repository. 
+   - Set the Deployment as automatic.
+   - Deploy the program.
