@@ -288,10 +288,14 @@ For project purposes, the functionality for adding and taking funds from nominat
 
 ## Deployment
   This project was deployed with a Code Institute mock terminal for Heroku.
-   - Fork savings-traker from Git Hub. 
+   - Create Procfile file and add web: gunicorn your_savings.wsgi to start the server
+   - Turn debug to False.
+   - Add heroku.com to the ALLOWED_HOSTS list.
+   - Add config Vars DISABLE_COLLECTSTATIC with a value of 1 to prevent Heroku from uploading static files, add DATABASE_URL with the value of the database destination.
+   - create requirements.txt to list all the used packages in the project so Heroku is aware of them.
+   - Fork savings-traker from Git Hub.
    - Create a new Heroku app.
-   - Add config Vars DISABLE_COLLECTSTATIC with a value of 1 to prevent Heroku from uploading static files, add DATABASE_URL with the value of the database destination 
-   - Set the buildpacks to Phyton and NodeJS.
+   - Change the dyno to Eco Dyno
    - Link the app to the Git Hub repository. 
    - Set the Deployment as automatic.
    - Deploy the program.
