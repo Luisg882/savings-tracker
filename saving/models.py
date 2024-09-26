@@ -10,7 +10,7 @@ class Profile(models.Model):
         max_length=200, unique=True, default="default-slug"
     )
     age = models.IntegerField(default=0)
-    email = models.EmailField(max_length=200, unique=True)
+    email = models.EmailField(max_length=200)
     nominated_bank_account = models.DecimalField(
         max_digits=8, decimal_places=0
     )
