@@ -287,7 +287,7 @@ For project purposes, the functionality for adding and taking funds from nominat
 
 
 ## Deployment
-  This project was deployed with a Code Institute mock terminal for Heroku.
+  This project was deployed in Heroku.
    - Create Procfile file and add web: gunicorn your_savings.wsgi to start the server
    - Turn debug to False.
    - Add heroku.com to the ALLOWED_HOSTS list.
